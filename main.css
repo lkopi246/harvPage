@@ -1,0 +1,406 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  position: relative;
+  background: #fff;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+/* Header Container */
+.hContainer {
+  display: flex;
+  width: 100%;
+  height: 5rem;
+  /* background-color: #000; */
+  padding: 0 1rem;
+  background: #000;
+}
+.hContainer p {
+  font-size: 1.6rem;
+  letter-spacing: 1rem;
+  align-self: center;
+  color: white;
+}
+
+.hContainer__imgBox {
+  width: 70px;
+  height: 70px;
+  margin-right: 2rem;
+  transform: translateY(1.5rem);
+}
+
+.hContainer__imgBox img {
+  width: 100%;
+  height: 100%;
+}
+
+/* green seperator */
+.greenSeperator {
+  height: 4.5rem;
+  width: 100vw;
+  background: rgb(64, 224, 208);
+}
+
+/* menu */
+#menu__toggle {
+  opacity: 0;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: calc(100% - 25rem);
+}
+
+.menu__btn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 1rem;
+  left: calc(100% - 5rem);
+  width: 2.6rem;
+  height: 2.6rem;
+  cursor: pointer;
+  z-index: 1;
+  transition: left 0.3s;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 0.2rem;
+  background-color: #fff;
+  transition-duration: 0.25s;
+}
+.menu__btn > span::before {
+  content: "";
+  top: -0.8rem;
+}
+.menu__btn > span::after {
+  content: "";
+  top: 0.8rem;
+}
+
+.menu__box {
+  display: block;
+  position: absolute;
+  visibility: hidden;
+  top: 5rem;
+  left: 100%;
+  width: 25rem;
+  height: 100%;
+  margin: 0;
+  list-style: none;
+  background-color: #000;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+  transition-duration: 0.25s;
+
+  z-index: 99;
+}
+
+.menu__item {
+  display: block;
+  padding: 1.2rem 2.4rem;
+  color: #000;
+  background-color: rgb(64, 224, 208);
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: 0.25s;
+}
+.menu__item:hover {
+  background-color: rgb(64, 224, 208);
+  color: #111;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+p span {
+  color: #333;
+}
+
+.mContainer__tBox {
+  padding-left: 4rem;
+  padding-top: 4rem;
+}
+
+.mContainer__tBox__mainHeading {
+  font-size: 3rem;
+  line-height: 4.5rem;
+  margin-right: 1rem;
+  padding: 1px;
+}
+
+.mContainer__imgBox {
+  position: absolute;
+  width: 100%;
+  height: 120rem;
+  background-image: url("./images/classroom2.jpg");
+  background-size: cover;
+  z-index: -1;
+}
+
+.mContainer__tBox__mainHeading span {
+  background-color: white;
+  color: rgb(64, 224, 208);
+  width: max-content;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.mContainer__tBox__mainHeading span:nth-child(1) {
+  display: block;
+}
+.mContainer__tBox__mainHeading span:nth-child(3) {
+  transform: translateX(-0.7rem);
+}
+
+.mContainer__tBox__mainHeading span:nth-child(4) {
+  display: block;
+}
+
+.mContainer__tBox__mainHeading span:nth-child(6) {
+  transform: translateX(-0.8rem);
+}
+
+.mContainer__tBox__secondaryText {
+  width: 40%;
+  /* height: 40rem; */
+  font-size: 2.3rem;
+  color: #fff;
+  margin-top: 1rem;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.mContainer__tBox__secondaryText span {
+  display: block;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+/* Footer Section */
+.fContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.fContainer__upper {
+  width: 100%;
+  height: 10rem;
+  background-color: #000;
+  padding: 2rem;
+}
+
+.fContainer__Text {
+  font-size: 1.6rem;
+  color: white;
+  line-height: 3rem;
+}
+
+.fContainer__lower {
+  width: 100%;
+  height: 6.5rem;
+  background-color: rgb(82, 82, 82);
+  padding: 2rem;
+}
+
+/* media queries */
+@media screen and (max-width: 700px) {
+  #menu__toggle:checked ~ .menu__btn {
+    left: calc(100% - 30rem);
+  }
+
+  .hContainer__imgBox {
+    width: 60px;
+    height: 60px;
+
+    margin-right: 0.5rem;
+  }
+
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    background-color: #000;
+  }
+
+  .hContainer__imgBox {
+    margin-right: 1.5rem;
+  }
+
+  .menu__btn {
+    top: 6rem;
+  }
+
+  .menu__box {
+    top: 5rem;
+  }
+
+  .mContainer__tBox__mainHeading {
+    transform: translateY(-6rem);
+  }
+  .mContainer__tBox__secondaryText {
+    transform: translateY(-6rem);
+  }
+  .mContainer__tBox__mainHeading span {
+    width: max-content;
+  }
+
+  .mContainer__imgBox {
+    position: static;
+    width: 100%;
+    height: 30rem;
+    background-image: url("./images/classroom2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .mContainer__tBox {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .mContainer__tBox__mainHeading span:nth-child(3) {
+    transform: translateX(0rem);
+  }
+  .mContainer__tBox__mainHeading span:nth-child(6) {
+    display: block;
+    transform: translateX(0rem);
+  }
+  .fContainer {
+    transform: translateY(-1rem);
+  }
+
+  .fContainer__upper {
+    height: 12rem;
+  }
+
+  .fContainer__lower {
+    height: 8rem;
+  }
+}
+
+@media screen and (max-width: 593px) {
+  .hContainer p {
+    font-size: 1.6rem;
+    letter-spacing: 0.8rem;
+  }
+
+  #menu__toggle:checked ~ .menu__btn {
+    left: calc(100% - 23rem);
+  }
+
+  #menu__toggle:checked ~ .menu__box {
+    left: calc(100% - 20rem);
+  }
+
+  .menu__box {
+    width: 20rem;
+  }
+
+  .mContainer__tBox__secondaryText {
+    width: 70%;
+  }
+
+  .mContainer__tBox__mainHeading span:nth-child(6) {
+    transform: translateX(0rem);
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .hContainer p {
+    font-size: 1.6rem;
+    letter-spacing: 0.3rem;
+  }
+
+  #menu__toggle:checked ~ .menu__btn {
+    left: calc(100% - 23rem);
+  }
+
+  #menu__toggle:checked ~ .menu__box {
+    left: calc(100% - 20rem);
+  }
+  .menu__box {
+    width: 20rem;
+  }
+
+  .mContainer__tBox__mainHeading {
+    transform: translateY(-6rem);
+  }
+  .mContainer__tBox__secondaryText {
+    width: 80%;
+    transform: translateY(-6rem);
+  }
+  .mContainer__tBox {
+    padding-left: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .hContainer p {
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .mContainer__tBox {
+    padding-left: 0.8rem;
+  }
+
+  .mContainer__tBox__mainHeading {
+    font-size: 2.5rem;
+    line-height: 4rem;
+    transform: translateY(-6rem);
+  }
+  .mContainer__tBox__secondaryText {
+    transform: translateY(-6rem);
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 758px) {
+  .fContainer {
+    transform: translateY(15rem);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .fContainer {
+    transform: translateY(20rem);
+  }
+}
+@media screen and (min-width: 970px) {
+  .fContainer {
+    transform: translateY(38rem);
+  }
+}
