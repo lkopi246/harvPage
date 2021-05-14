@@ -267,6 +267,7 @@ p span {
 
   .menu__box {
     top: 5rem;
+    height: 50%;
   }
 
   .mContainer__tBox__mainHeading {
@@ -327,6 +328,7 @@ p span {
 
   .menu__box {
     width: 20rem;
+    height: 45%;
   }
 
   .mContainer__tBox__secondaryText {
